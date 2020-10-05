@@ -1,228 +1,86 @@
-<p align="center">
-  <img width="320" src="https://wpimg.wallstcn.com/ecc53a42-d79b-42e2-8852-5126b810a4c8.svg">
-</p>
+# X-admin
 
-<p align="center">
-  <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
-  </a>
-  <a href="https://github.com/ElemeFE/element">
-    <img src="https://img.shields.io/badge/element--ui-2.7.0-brightgreen.svg" alt="element-ui">
-  </a>
-  <a href="https://travis-ci.org/PanJiaChen/vue-element-admin" rel="nofollow">
-    <img src="https://travis-ci.org/PanJiaChen/vue-element-admin.svg?branch=master" alt="Build Status">
-  </a>
-  <a href="https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
-  </a>
-  <a href="https://github.com/PanJiaChen/vue-element-admin/releases">
-    <img src="https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg" alt="GitHub release">
-  </a>
-  <a href="https://gitter.im/vue-element-admin/discuss">
-    <img src="https://badges.gitter.im/Join%20Chat.svg" alt="gitter">
-  </a>
-  <a href="https://panjiachen.github.io/vue-element-admin-site/donate">
-    <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
-  </a>
-</p>
+简介
+X-admin基于layui的轻量级前端后台管理框架，简单免费，兼容性好，面向所有层次的前后端程序。创立于2017年初，为了敏捷WEB应用开发和简化企业应用开发而诞生的。#X-admin从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重易用性。并且拥有众多的原创功能和特性，在社区团队的积极参与下，在易用性、扩展性和性能方面不断优化和改进，已经成长为国内最领先和最具影响力的WEB应用开发前端后台框架，众多的典型案例确保可以稳定用于商业以及门户级的开发。testadmin
 
-English | [简体中文](./README.zh-CN.md) | [日本語](./README.ja.md) | [Spanish](./README.es.md)
+商业友好的开源协议
+X-admin遵循Apache2开源协议发布。Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再作为开源或商业软件发布。
 
-## Introduction
+## (ps:喜欢记得点赞，开源免费，大家拿去用，如果过意不去就捐点款，我不介意的)
 
-[vue-element-admin](https://panjiachen.github.io/vue-element-admin) is a production-ready front-end solution for admin interfaces. It is based on [vue](https://github.com/vuejs/vue) and uses the UI Toolkit [element-ui](https://github.com/ElemeFE/element).
+## 官网
 
-[vue-element-admin](https://panjiachen.github.io/vue-element-admin) is based on the newest development stack of vue and it has a built-in i18n solution, typical templates for enterprise applications, and lots of awesome features. It helps you build large and complex Single-Page Applications. I believe whatever your needs are, this project will help you.
+http://x.xuebingsi.com
 
-- [Preview](https://panjiachen.github.io/vue-element-admin)
+交流QQ群：519492808
 
-- [Documentation](https://panjiachen.github.io/vue-element-admin-site/)
+## 2019-05-06更新
 
-- [Gitter](https://gitter.im/vue-element-admin/discuss)
-
-- [Donate](https://panjiachen.github.io/vue-element-admin-site/donate/)
-
-- [Wiki](https://github.com/PanJiaChen/vue-element-admin/wiki)
-
-- [Gitee](https://panjiachen.gitee.io/vue-element-admin/) 国内用户可访问该地址在线预览
-
-- Base template recommends using: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
-- Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-- Typescript: [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
-- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
-
-**After the `v4.1.0+` version, the default master branch will not support i18n. Please use [i18n Branch](https://github.com/PanJiaChen/vue-element-admin/tree/i18n), it will keep up with the master update**
-
-**The current version is `v4.0+` build on `vue-cli`. If you find a problem, please put [issue](https://github.com/PanJiaChen/vue-element-admin/issues/new). If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-element-admin/tree/tag/3.11.0), it does not rely on `vue-cli`**
-
-**This project does not support low version browsers (e.g. IE). Please add polyfill by yourself.**
-
-## Preparation
-
-You need to install [node](https://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](https://es6.ruanyifeng.com/), [vue](https://cn.vuejs.org/index.html), [vuex](https://vuex.vuejs.org/zh-cn/), [vue-router](https://router.vuejs.org/zh-cn/), [vue-cli](https://github.com/vuejs/vue-cli) , [axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element), all request data is simulated using [Mock.js](https://github.com/nuysoft/Mock).
-Understanding and learning this knowledge in advance will greatly help the use of this project.
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/PanJiaChen/vue-element-admin/tree/CodeSandbox)
-
-<p align="center">
-  <img width="900" src="https://wpimg.wallstcn.com/a5894c1b-f6af-456e-82df-1151da0839bf.png">
-</p>
-
-## Sponsors
-
-Become a sponsor and get your logo on our README on GitHub with a link to your site. [[Become a sponsor]](https://www.patreon.com/panjiachen)
-
-### Akveo
-<a href="https://store.akveo.com/products/vue-java-admin-dashboard-spring?utm_campaign=akveo_store-Vue-Vue_demo%2Fgithub&utm_source=vue_admin&utm_medium=referral&utm_content=github_banner"><img width="500px" src="https://raw.githubusercontent.com/PanJiaChen/vue-element-admin-site/master/docs/.vuepress/public/images/vue-java-banner.png" /></a><p>Get Java backend for Vue admin with 20% discount for 39$ use coupon code SWB0RAZPZR1M
-</p>
-
-### Flatlogic
-
-<a href="https://flatlogic.com/admin-dashboards?from=vue-element-admin"><img width="150px" src="https://wpimg.wallstcn.com/9c0b719b-5551-4c1e-b776-63994632d94a.png" /></a><p>Admin Dashboard Templates made with Vue, React and Angular.</p>
-
-## Features
-
-```
-- Login / Logout
-
-- Permission Authentication
-  - Page permission
-  - Directive permission
-  - Permission configuration page
-  - Two-step login
-
-- Multi-environment build
-  - Develop (dev)
-  - sit
-  - Stage Test (stage)
-  - Production (prod)
-
-- Global Features
-  - I18n
-  - Multiple dynamic themes
-  - Dynamic sidebar (supports multi-level routing)
-  - Dynamic breadcrumb
-  - Tags-view (Tab page Support right-click operation)
-  - Svg Sprite
-  - Mock data
-  - Screenfull
-  - Responsive Sidebar
-
-- Editor
-  - Rich Text Editor
-  - Markdown Editor
-  - JSON Editor
-
-- Excel
-  - Export Excel
-  - Upload Excel
-  - Visualization Excel
-  - Export zip
-
-- Table
-  - Dynamic Table
-  - Drag And Drop Table
-  - Inline Edit Table
-
-- Error Page
-  - 401
-  - 404
-
-- Components
-  - Avatar Upload
-  - Back To Top
-  - Drag Dialog
-  - Drag Select
-  - Drag Kanban
-  - Drag List
-  - SplitPane
-  - Dropzone
-  - Sticky
-  - CountTo
-
-- Advanced Example
-- Error Log
-- Dashboard
-- Guide Page
-- ECharts
-- Clipboard
-- Markdown to html
+修改静态表格展现问题，设置td 最小宽度为80px,table宽度溢出自动出现滚动。
+升级方式，下载复制最新的 xadmin.css 在table外盒子增加 两个类。
+修改如下：class增加"layui-table-body layui-table-main"
+ ```
+<div class="layui-card-body layui-table-body layui-table-main">
+    <table class="layui-table layui-form">
+    </table>
+</div
 ```
 
-## Getting started
+## 2019-04-26更新
 
-```bash
-# clone the project
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+* 完善tab 打开的记忆功能，之后关闭后，之前写入的tab 还可以读取出来
+* 增加弹出层父窗口刷新功能 xadmin.father_reload()
+* 增加提交后 关闭弹出 层  xadmin.close();
+* 静态表格全选  案例在会员列表
+* 增加右侧记忆功能 
+* v2.2升级只需要覆盖 xadmin.js
 
-# enter the project directory
-cd vue-element-admin
+## 2019-04-13更新
 
-# install dependency
-npm install
+* 对2.1版本整个逻辑重新设计，增加不同的主题，在xadmin.css后面引入主题文件就可以，主题样式文件放在css目录，喜欢记得点赞
 
-# develop
-npm run dev
-```
+## 2019-03-30更新
+* 修改 x_admin_show 弹出窗口实现最大化，默认窗口非最大化，如果需要弹出窗口最大化，在最后一个参数传 true
 
-This will automatically open http://localhost:9527
+修复x_admin_add_to_tab 函数bug，在多个页面切换过程的报错。
 
-## Build
+x_admin_show(title,url,w,h,full=false)
 
-```bash
-# build for test environment
-npm run build:stage
+## 2019-03-19更新
+* 增加非菜单打开tab函数 x_admin_add_to_tab(title,url,is_refresh) titel为tab标题,url为打开页面地址,is_refresh 可选参数，重复点击是否刷新，默认为false不刷新,true为重复点击刷新页面
+用法:
+index.html 中直接 x_admin_add_to_tab('在tab打开','http://www.baidu.com',true)
+iframe页面中  用 parent.x_admin_add_to_tab('在tab打开','http://www.163.com',true)
+我的桌面有demo
 
-# build for production environment
-npm run build:prod
-```
+## 2019-03-07更新
+* 是否开启刷新记忆tab功能, 通过index 页面增加 var is_remember = false;不增加默认开启
 
-## Advanced
+## 2019-03-06更新
 
-```bash
-# preview the release environment effect
-npm run preview
+* 增加tab双击关闭当前tab
+* 增加tab右键菜单，可实现 关闭当前/关闭其它/关闭全部
 
-# preview the release environment effect + static resource analysis
-npm run preview -- --report
+## 2019-02-28更新
 
-# code format check
-npm run lint
+* 开发升级为2.1, 引入layui 2.4.5 
+* 增加 html 根标签增加 class="x-admin-sm" 可以实现整体方格字体的细化 原字体14px 变成12px 16px变为14px，对于有些需要显示更多信息的页面比较友好 去除x-admin-sm 恢复原来样式
+* 增加动态表格事例
+* 增加左侧点击刷新tab 可根据实际需要选择  在 sub-menu li 标签中加上属性 date-refresh="1" ,该链接点击会进行刷新
+* 增加弹出层函数 x_admin_father_reload() 该函数可以实现对父窗口的刷新
+* 刷新保留左侧展开 （利用cookie 保存点击过的 索引，刷新读取cookie对应的索引 进行展开左侧）
+* 增加404错误页面
+* tab记忆功能，刷新保留之前打开的tab （利用cookie 保存点击过的 索引，刷新读取cookie对应的索引 进行打开)
 
-# code format check and auto fix
-npm run lint -- --fix
-```
 
-Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/guide/essentials/deploy.html) for more information
+## 2018-04-30更新
 
-## Changelog
+* 登录页面加上动画效果
+* 首页欢迎页面也加动画效果
 
-Detailed changes for each release are documented in the [release notes](https://github.com/PanJiaChen/vue-element-admin/releases).
+## 2018-04-25更新
 
-## Online Demo
-
-[Preview](https://panjiachen.github.io/vue-element-admin)
-
-## Donate
-
-If you find this project useful, you can buy author a glass of juice :tropical_drink:
-
-![donate](https://wpimg.wallstcn.com/bd273f0d-83a0-4ef2-92e1-9ac8ed3746b9.png)
-
-[Paypal Me](https://www.paypal.me/panfree23)
-
-[Buy me a coffee](https://www.buymeacoffee.com/Pan)
-
-## Browsers support
-
-Modern browsers and Internet Explorer 10+.
-
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge | last 2 versions | last 2 versions | last 2 versions |
-
-## License
-
-[MIT](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
-
-Copyright (c) 2017-present PanJiaChen
+* 针对首页欢迎页面调整
+* 修改tab窗口首页为能关闭
+* 对角色增加页面重新设计
+* 增加图标字体对应的编码
