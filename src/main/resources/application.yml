@@ -11,6 +11,10 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp
+      suffix: .jsp
   #  ˝æ›ø‚≈‰÷√
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
