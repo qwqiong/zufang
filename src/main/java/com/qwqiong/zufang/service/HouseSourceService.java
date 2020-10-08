@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 /**
@@ -40,5 +39,14 @@ public class HouseSourceService {
      */
     public void delete(Integer id) {
         houseSourceRepository.deleteById(id);
+    }
+
+    /**
+     * 房源详情
+     * @param id
+     * @return
+     */
+    public HouseSource detail(Integer id) {
+       return houseSourceRepository.findById(id).get();
     }
 }

@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.HashMap;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/houseSource")
@@ -30,6 +29,17 @@ public class HouseSourceController {
     @GetMapping("/list")
     public ModelAndView test(){
         return new ModelAndView("/houseSourceList");
+    }
+    /**
+     * 房源列表
+     * @return
+     */
+    @GetMapping("/detail")
+    public ModelAndView detail(HttpServletRequest request, Model model){
+        Integer id = Integer.valueOf(request.getParameter("id"));
+        HouseSource houseSource = houseSourceService.detail(id);
+        model.addAttribute("houseSource",houseSource);
+        return new ModelAndView("/houseSourceDetail");
     }
     /**
      * 删除房源列表

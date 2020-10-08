@@ -25,6 +25,9 @@
                 <a title="删除" onclick="itemDel(this,'${item.id}')" href="javascript:;">
                     <i class="layui-icon">&#xe640;</i>
                 </a>
+                <a title="编辑"  onclick="xadmin.open('编辑房源','/houseSource/detail?id=${item.id}',500,500)" href="javascript:;">
+                    <i class="layui-icon">&#xe642;</i>
+                </a>
             </td>
         </tr>
     </c:forEach>
