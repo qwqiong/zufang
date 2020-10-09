@@ -1,7 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html class="x-admin-sm">
+
 <head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.2</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -22,83 +25,66 @@
         <form class="layui-form">
             <div class="layui-form-item" style="display:none">
                 <div class="layui-input-inline">
-                    <input type="text" value="${houseSource.id}" id="id" name="id" required="" autocomplete="off" class="layui-input">
+                    <input type="text" value="${customSource.id}" id="id" name="id" required="" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="village" class="layui-form-label">小区</label>
+                <label for="customName" class="layui-form-label">姓名</label>
                 <div class="layui-input-inline">
-                    <input type="text" value="${houseSource.village}" id="village" name="village" required="" autocomplete="off" class="layui-input">
+                    <input type="text" id="customName" name="customName" value="${customSource.customName}" required="" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="zoneCount" class="layui-form-label">居室</label>
+                <label for="requireType" class="layui-form-label">需求户型</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="zoneCount" value="${houseSource.zoneCount}" name="zoneCount" required="" autocomplete="off"
+                    <input type="text" id="requireType" name="requireType" value="${customSource.requireType}" required="" autocomplete="off"
                            class="layui-input"></div>
             </div>
             <div class="layui-form-item">
-                <label for="buildingNo" class="layui-form-label">楼号</label>
+                <label for="requirePrice" class="layui-form-label">需求价位</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="buildingNo" value="${houseSource.buildingNo}" name="buildingNo" required=""
-                           autocomplete="off" class="layui-input"></div>
-            </div>
-            <div class="layui-form-item">
-                <label for="housePrice" class="layui-form-label">价格</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="housePrice" value="${houseSource.housePrice}" name="housePrice" required=""
-                           autocomplete="off" class="layui-input"></div>
-            </div>
-            <div class="layui-form-item">
-                <label for="orientation" class="layui-form-label">朝向</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="orientation" value="${houseSource.orientation}" name="orientation" required=""
-                           autocomplete="off" class="layui-input"></div>
+                    <input type="text" id="requirePrice" name="requirePrice" value="${customSource.requirePrice}" required="" autocomplete="off"
+                           class="layui-input"></div>
             </div>
             <div class="layui-form-item">
                 <label for="mobileNo" class="layui-form-label">电话</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="mobileNo" value="${houseSource.mobileNo}" name="mobileNo" required=""
+                    <input type="text" id="mobileNo" name="mobileNo" value="${customSource.mobileNo}" required=""
                            autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label for="visitTime" class="layui-form-label">看房时间</label>
+                <div class="layui-input-inline layui-show-xs-block">
+                    <input type="date" class="layui-input" placeholder="看房时间" value="${customSource.visitTime}" name="visitTime" id="visitTime"></div>
+            </div>
+            <div class="layui-form-item">
+                <label for="inTime" class="layui-form-label">入住时间</label>
+                <div class="layui-input-inline layui-show-xs-block">
+                    <input type="date" class="layui-input" placeholder="入住时间" name="inTime" value="${customSource.inTime}" id="inTime"></div>
             </div>
             <div class="layui-form-item">
                 <label for="comment" class="layui-form-label">备注</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="comment" value="${houseSource.comment}" name="comment" required=""
+                    <input type="text" id="comment" name="comment" value="${customSource.comment}" required=""
                            autocomplete="off" class="layui-input"></div>
             </div>
             <div class="layui-form-item">
-                <label for="addHouse" class="layui-form-label"></label>
-                <button class="layui-btn" id="addHouse" lay-filter="add" lay-submit="">增加</button>
+                <label for="customSourceAdd" class="layui-form-label"></label>
+                <button class="layui-btn" id="customSourceAdd" lay-filter="add" lay-submit="">增加</button>
             </div>
         </form>
     </div>
 </div>
-<script>layui.use(['form', 'layer', 'jquery'],
+<script>layui.use(['form', 'layer', 'jquery','laydate'],
     function () {
         $ = layui.jquery;
         var form = layui.form,
             layer = layui.layer;
 
-        //自定义验证规则
-        form.verify({
-            nikename: function (value) {
-                if (value.length < 5) {
-                    return '昵称至少得5个字符啊';
-                }
-            },
-            pass: [/(.+){6,12}$/, '密码必须6到12位'],
-            repass: function (value) {
-                if ($('#L_pass').val() != $('#L_repass').val()) {
-                    return '两次密码不一致';
-                }
-            }
-        });
-
         //监听提交
         form.on('submit(add)',
             function (data) {
-                $.post("/houseSource/add", data.field, function (res) {
+                $.post("/customSource/add", data.field, function (res) {
                     console.log(res);
                 });
                 layer.alert("增加成功", {

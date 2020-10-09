@@ -13,34 +13,34 @@ import javax.persistence.Table;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "house_source")
+@Table(name = "custom_source")
 @Where(clause = "remove=false")
-@SQLDelete(sql = "update house_source set remove=true,last_modified=now() where id=?")
-public class HouseSource extends BaseEntity{
+@SQLDelete(sql = "update custom_source set remove=true,last_modified=now() where id=?")
+public class CustomSource extends BaseEntity{
     /**
-     * 小区
+     * 客户姓名
      */
-    private String village;
+    private String customName;
     /**
-     * 居室
+     * 需求户型
      */
-    private String zoneCount;
-    /**
-     * 楼号
-     */
-    private String buildingNo;
-    /**
-     * 价格
-     */
-    private String housePrice;
-    /**
-     * 朝向
-     */
-    private String orientation;
+    private String requireType;
     /**
      * 电话
      */
     private String mobileNo;
+    /**
+     * 需求价位
+     */
+    private String requirePrice;
+    /**
+     * 看房时间
+     */
+    private String visitTime;
+    /**
+     * 入住时间
+     */
+    private String inTime;
     /**
      * 备注
      */

@@ -49,7 +49,7 @@
                             <cite>房源管理</cite></a>
                     </li>
                     <li>
-                        <a onclick="xadmin.add_tab('客源管理','customList.html')">
+                        <a onclick="xadmin.add_tab('客源管理','/customSource/list')">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>客源管理</cite></a>
                     </li>
