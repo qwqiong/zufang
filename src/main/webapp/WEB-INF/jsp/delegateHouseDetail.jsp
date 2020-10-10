@@ -4,7 +4,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.2</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -25,52 +24,46 @@
         <form class="layui-form">
             <div class="layui-form-item" style="display:none">
                 <div class="layui-input-inline">
-                    <input type="text" value="${customSource.id}" id="id" name="id" required="" autocomplete="off" class="layui-input">
+                    <input type="text" value="${delegateHouse.id}" id="id" name="id" required="" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="customName" class="layui-form-label">姓名</label>
+                <label for="delegatePrice" class="layui-form-label">委托价</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="customName" name="customName" value="${customSource.customName}" required="" autocomplete="off" class="layui-input">
+                    <input type="text" id="delegatePrice" name="delegatePrice" value="${delegateHouse.delegatePrice}" required="" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="requireType" class="layui-form-label">需求户型</label>
+                <label for="payDate" class="layui-form-label">打款日</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="requireType" name="requireType" value="${customSource.requireType}" required="" autocomplete="off"
+                    <input type="date" id="payDate" name="payDate" value="${delegateHouse.payDate}" required="" autocomplete="off"
                            class="layui-input"></div>
             </div>
             <div class="layui-form-item">
-                <label for="requirePrice" class="layui-form-label">需求价位</label>
+                <label for="rentStartDate" class="layui-form-label">起租日</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="requirePrice" name="requirePrice" value="${customSource.requirePrice}" required="" autocomplete="off"
+                    <input type="date" id="rentStartDate" name="rentStartDate" value="${delegateHouse.rentStartDate}" required="" autocomplete="off"
                            class="layui-input"></div>
             </div>
             <div class="layui-form-item">
-                <label for="mobileNo" class="layui-form-label">电话</label>
+                <label for="rentEndDate" class="layui-form-label">截止日</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="mobileNo" name="mobileNo" value="${customSource.mobileNo}" required=""
+                    <input type="date" id="rentEndDate" name="rentEndDate" value="${delegateHouse.rentEndDate}" required=""
                            autocomplete="off" class="layui-input"></div>
             </div>
             <div class="layui-form-item">
-                <label for="visitTime" class="layui-form-label">看房时间</label>
+                <label for="deliveryPrice" class="layui-form-label">配送成本</label>
                 <div class="layui-input-inline layui-show-xs-block">
-                    <input type="date" class="layui-input" placeholder="看房时间" value="${customSource.visitTime}" name="visitTime" id="visitTime"></div>
-            </div>
-            <div class="layui-form-item">
-                <label for="inTime" class="layui-form-label">入住时间</label>
-                <div class="layui-input-inline layui-show-xs-block">
-                    <input type="date" class="layui-input" placeholder="入住时间" name="inTime" value="${customSource.inTime}" id="inTime"></div>
+                    <input type="text" class="layui-input"  name="deliveryPrice" id="deliveryPrice" value="${delegateHouse.deliveryPrice}"></div>
             </div>
             <div class="layui-form-item">
                 <label for="comment" class="layui-form-label">备注</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="comment" name="comment" value="${customSource.comment}" required=""
-                           autocomplete="off" class="layui-input"></div>
+                <div class="layui-input-inline layui-show-xs-block">
+                    <input type="text" class="layui-input" name="comment" id="comment" value="${delegateHouse.comment}"></div>
             </div>
             <div class="layui-form-item">
-                <label for="customSourceAdd" class="layui-form-label"></label>
-                <button class="layui-btn" id="customSourceAdd" lay-filter="add" lay-submit="">修改</button>
+                <label for="addDelegateHouse" class="layui-form-label"></label>
+                <button class="layui-btn" id="addDelegateHouse" lay-filter="add" lay-submit="">修改</button>
             </div>
         </form>
     </div>
@@ -84,7 +77,7 @@
         //监听提交
         form.on('submit(add)',
             function (data) {
-                $.post("/customSource/add", data.field, function (res) {
+                $.post("/delegateHouse/add", data.field, function (res) {
                     console.log(res);
                 });
                 layer.alert("修改成功", {

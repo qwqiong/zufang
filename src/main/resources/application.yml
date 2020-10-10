@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     # 应用名称，也是当前应用在注册中心的serviceId
@@ -18,9 +18,9 @@ spring:
   # 数据库配置
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/zufang?characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://81.70.5.172:3306/zufang?characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
-    password: 123456
+    password: 1234.Aaaa
   jpa:
     hibernate.ddl-auto: update
     show-sql: true

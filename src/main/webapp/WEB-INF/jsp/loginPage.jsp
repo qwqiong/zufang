@@ -41,6 +41,7 @@
         var username = $("input[name='username']").val();
         var password = $("input[name='password']").val();
         $.post("/login/login",{"username":username,"password":password},function (res) {
+            layui.data("tab_list",null);
             location.href = "/index/index";
         })
     })

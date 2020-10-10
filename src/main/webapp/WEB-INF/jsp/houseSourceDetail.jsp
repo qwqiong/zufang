@@ -69,7 +69,7 @@
             </div>
             <div class="layui-form-item">
                 <label for="addHouse" class="layui-form-label"></label>
-                <button class="layui-btn" id="addHouse" lay-filter="add" lay-submit="">增加</button>
+                <button class="layui-btn" id="addHouse" lay-filter="add" lay-submit="">修改</button>
             </div>
         </form>
     </div>
@@ -101,7 +101,7 @@
                 $.post("/houseSource/add", data.field, function (res) {
                     console.log(res);
                 });
-                layer.alert("增加成功", {
+                layer.alert("修改成功", {
                         icon: 6
                     },
                     function () {
