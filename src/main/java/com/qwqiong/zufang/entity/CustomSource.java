@@ -26,6 +26,10 @@ public class CustomSource extends BaseEntity{
      */
     private String requireType;
     /**
+     * 需求户型
+     */
+    private String requireAddr;
+    /**
      * 电话
      */
     private String mobileNo;

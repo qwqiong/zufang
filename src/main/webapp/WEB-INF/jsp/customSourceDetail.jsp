@@ -4,7 +4,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.2</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -35,13 +34,24 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="requireType" class="layui-form-label">需求户型</label>
+                <label for="requireType" class="layui-form-label">户型</label>
                 <div class="layui-input-inline">
                     <input type="text" id="requireType" name="requireType" value="${customSource.requireType}" required="" autocomplete="off"
                            class="layui-input"></div>
             </div>
             <div class="layui-form-item">
-                <label for="requirePrice" class="layui-form-label">需求价位</label>
+                <label for="requireAddr" class="layui-form-label">位置</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="requireAddr" name="requireAddr" value="${customSource.requireAddr}" required="" autocomplete="off"
+                           class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label for="inTime" class="layui-form-label">入住时间</label>
+                <div class="layui-input-inline layui-show-xs-block">
+                    <input type="date" class="layui-input" placeholder="入住时间" name="inTime" value="${customSource.inTime}" id="inTime"></div>
+            </div>
+            <div class="layui-form-item">
+                <label for="requirePrice" class="layui-form-label">价位</label>
                 <div class="layui-input-inline">
                     <input type="text" id="requirePrice" name="requirePrice" value="${customSource.requirePrice}" required="" autocomplete="off"
                            class="layui-input"></div>
@@ -51,16 +61,6 @@
                 <div class="layui-input-inline">
                     <input type="text" id="mobileNo" name="mobileNo" value="${customSource.mobileNo}" required=""
                            autocomplete="off" class="layui-input"></div>
-            </div>
-            <div class="layui-form-item">
-                <label for="visitTime" class="layui-form-label">看房时间</label>
-                <div class="layui-input-inline layui-show-xs-block">
-                    <input type="date" class="layui-input" placeholder="看房时间" value="${customSource.visitTime}" name="visitTime" id="visitTime"></div>
-            </div>
-            <div class="layui-form-item">
-                <label for="inTime" class="layui-form-label">入住时间</label>
-                <div class="layui-input-inline layui-show-xs-block">
-                    <input type="date" class="layui-input" placeholder="入住时间" name="inTime" value="${customSource.inTime}" id="inTime"></div>
             </div>
             <div class="layui-form-item">
                 <label for="comment" class="layui-form-label">备注</label>

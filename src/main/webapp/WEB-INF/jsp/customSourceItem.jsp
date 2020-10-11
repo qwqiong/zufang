@@ -3,12 +3,12 @@
 <table class="layui-table layui-form">
     <thead>
     <tr>
-        <th>客户姓名</th>
-        <th>需求户型</th>
-        <th>需求价位</th>
-        <th>电话</th>
-        <th>看房时间</th>
+        <th>姓名</th>
+        <th>户型</th>
+        <th>位置</th>
         <th>入住时间</th>
+        <th>价位</th>
+        <th>电话</th>
         <th>备注</th>
         <th>操作</th>
     </tr>
@@ -18,10 +18,10 @@
         <tr>
             <td>${item.customName}</td>
             <td>${item.requireType}</td>
+            <td>${item.requireAddr}</td>
+            <td>${item.inTime}</td>
             <td>${item.requirePrice}</td>
             <td>${item.mobileNo}</td>
-            <td>${item.visitTime}</td>
-            <td>${item.inTime}</td>
             <td>${item.comment}</td>
             <td class="td-manage">
                 <a title="删除" onclick="itemDel(this,'${item.id}')" href="javascript:;">
