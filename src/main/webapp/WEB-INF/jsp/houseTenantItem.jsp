@@ -29,7 +29,7 @@
                 <a title="删除" onclick="itemDel(this,'${item.id}')" href="javascript:;">
                     <i class="layui-icon">&#xe640;</i>
                 </a>
-                <a title="编辑"  onclick="xadmin.open('编辑房源','/delegateHouse/detail?id=${item.id}',500,500)" href="javascript:;">
+                <a title="编辑"  onclick="xadmin.open('编辑房源','/houseTenant/detail?id=${item.id}',500,600)" href="javascript:;">
                     <i class="layui-icon">&#xe642;</i>
                 </a>
             </td>

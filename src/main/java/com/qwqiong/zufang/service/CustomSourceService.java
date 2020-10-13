@@ -1,6 +1,7 @@
 package com.qwqiong.zufang.service;
 
 import com.qwqiong.zufang.entity.CustomSource;
+import com.qwqiong.zufang.entity.User;
 import com.qwqiong.zufang.repository.CustomSourceRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,10 @@ public class CustomSourceService {
     /**
      * 客源列表
      * @return
+     * @param user
      */
-    public List<CustomSource> items() {
-        return customSourceRepository.findAll();
+    public List<CustomSource> items(User user) {
+        return customSourceRepository.findCustomSource(user.getRole(),user.getId());
     }
 
     /**

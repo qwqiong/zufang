@@ -3,6 +3,7 @@ package com.qwqiong.zufang.controller;
 import com.qwqiong.zufang.entity.CustomSource;
 import com.qwqiong.zufang.entity.HouseSource;
 import com.qwqiong.zufang.entity.ResultData;
+import com.qwqiong.zufang.entity.User;
 import com.qwqiong.zufang.service.CustomSourceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +52,9 @@ public class CustomSourceController {
      */
     @PostMapping("/add")
     @ResponseBody
-    public ResultData add(CustomSource house){
+    public ResultData add(HttpServletRequest request,CustomSource house){
+        User user = (User) request.getSession().getAttribute("user");
+        house.setAgentId(user.getId());
         customSourceService.add(house);
         log.info("============="+house.toString());
         return ResultData.success();
@@ -71,8 +74,9 @@ public class CustomSourceController {
      * @return
      */
     @PostMapping("/items")
-    public ModelAndView items(Model model){
-        List<CustomSource> items =  customSourceService.items();
+    public ModelAndView items(HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("user");
+        List<CustomSource> items =  customSourceService.items(user);
         model.addAttribute("items",items);
         return new ModelAndView("/customSourceItem");
     }

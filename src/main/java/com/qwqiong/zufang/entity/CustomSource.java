@@ -49,4 +49,8 @@ public class CustomSource extends BaseEntity{
      * 备注
      */
     private String comment;
+    /**
+     * 中介ID
+     */
+    private Integer agentId;
 }
