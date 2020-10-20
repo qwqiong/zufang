@@ -27,3 +27,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+#文件上传路径
+fms:
+  baseDir: C:/temp/
