@@ -68,8 +68,8 @@ public class HouseTenantController {
      * @return
      */
     @PostMapping("/items")
-    public ModelAndView items(Model model){
-        List<HouseTenant> items =  houseTenantService.items();
+    public ModelAndView items(Model model,HouseTenant houseTenant){
+        List<HouseTenant> items =  houseTenantService.items(houseTenant);
         model.addAttribute("items",items);
         return new ModelAndView("/houseTenantItem");
     }

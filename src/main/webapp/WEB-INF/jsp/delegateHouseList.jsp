@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html class="x-admin-sm">
+<html class="">
 <head>
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/css/layui.css"  media="all">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
           content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
@@ -12,7 +13,6 @@
     <script src="/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/js/xadmin.js"></script>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-    >
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -24,7 +24,27 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-body ">
-                    <div class="layui-card-body ">
+                    <div class="layui-card-header layui-form-pane">
+			            <div class="layui-form-item">
+						    <div class="layui-inline">
+						      <label class="layui-form-label">起租开始</label>
+						      <div class="layui-input-block">
+						        <input type="text" name="rentStartDate" id="rentStartDate" value="${delegateHouse.rentStartDate}" autocomplete="off" class="layui-input">
+						      </div>
+						    </div>
+						    <div class="layui-inline">
+						      <label class="layui-form-label">起租截止</label>
+						      <div class="layui-input-inline">
+						        <input type="text" name="rentEndDate" id="rentEndDate" value="${delegateHouse.rentEndDate}" autocomplete="off" class="layui-input">
+						      </div>
+						    </div>
+						    
+						    <div class="layui-inline">
+						       	 <button class="layui-btn" onclick="queryList()"><i
+	                                class="layui-icon"></i>查询
+	                        	 </button>
+						    </div>
+						  </div>
                     </div>
                     <div class="layui-card-header">
                         <button class="layui-btn" onclick="xadmin.open('添加委托房源','/delegateHouseAdd.html',500,500)"><i
@@ -56,4 +76,25 @@
             $("#delegateHouseItem").html(resonse);
         })
     })
+    
+    layui.use('laydate', function(){
+  		  var laydate = layui.laydate;
+	  	  //常规用法
+		  laydate.render({
+		    elem: '#rentStartDate'
+		  });
+	  	  
+		  laydate.render({
+		    elem: '#rentEndDate'
+		  });
+    });
+    
+    /*查询操作*/
+    function queryList(){
+    	var rentStartDate =$("#rentStartDate").val();
+    	var rentEndDate =$("#rentEndDate").val();
+    	$.post("/delegateHouse/items", {"rentStartDate":rentStartDate,"rentEndDate":rentEndDate}, function (resonse) {
+    		 $("#delegateHouseItem").html(resonse);
+        })
+    }
 </script>

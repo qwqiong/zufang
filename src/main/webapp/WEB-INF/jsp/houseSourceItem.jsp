@@ -24,9 +24,11 @@
             <td>${item.mobileNo}</td>
             <td>${item.comment}</td>
             <td class="td-manage">
-                <a title="删除" onclick="itemDel(this,'${item.id}')" href="javascript:;">
-                    <i class="layui-icon">&#xe640;</i>
-                </a>
+            	<c:if test="${user.role=='boss' }">
+	                <a title="删除" onclick="itemDel(this,'${item.id}')" href="javascript:;">
+	                    <i class="layui-icon">&#xe640;</i>
+	                </a>
+                </c:if>
                 <a title="编辑"  onclick="xadmin.open('编辑房源','/houseSource/detail?id=${item.id}',500,500)" href="javascript:;">
                     <i class="layui-icon">&#xe642;</i>
                 </a>

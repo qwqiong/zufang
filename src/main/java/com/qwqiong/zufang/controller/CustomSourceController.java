@@ -56,7 +56,6 @@ public class CustomSourceController {
         User user = (User) request.getSession().getAttribute("user");
         house.setAgentId(user.getId());
         customSourceService.add(house);
-        log.info("============="+house.toString());
         return ResultData.success();
     }
     /**

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html class="x-admin-sm">
+<html class="">
 <head>
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit">
@@ -24,8 +24,28 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-body ">
-                    <div class="layui-card-body ">
-                    </div>
+                	 <div class="layui-card-header layui-form-pane">
+			            <div class="layui-form-item">
+						    <div class="layui-inline">
+						      <label class="layui-form-label">起租开始</label>
+						      <div class="layui-input-block">
+						        <input type="text" name="rentStartDate" id="rentStartDate" autocomplete="off" class="layui-input">
+						      </div>
+						    </div>
+						    <div class="layui-inline">
+						      <label class="layui-form-label">起租截止</label>
+						      <div class="layui-input-inline">
+						        <input type="text" name="rentEndDate" id="rentEndDate" autocomplete="off" class="layui-input">
+						      </div>
+						    </div>
+						    
+						    <div class="layui-inline">
+						       	 <button class="layui-btn" onclick="queryList()"><i
+	                                class="layui-icon"></i>查询
+	                        	 </button>
+						    </div>
+						  </div>
+				    </div>    
                     <div class="layui-card-header">
                         <button class="layui-btn" onclick="xadmin.open('添加租户','/houseTenantAdd.html',500,600)"><i
                                 class="layui-icon"></i>添加
@@ -56,4 +76,25 @@
             $("#houseTenantItem").html(resonse);
         })
     })
+    
+    layui.use('laydate', function(){
+  		  var laydate = layui.laydate;
+	  	  //常规用法
+		  laydate.render({
+		    elem: '#rentStartDate'
+		  });
+	  	  
+		  laydate.render({
+		    elem: '#rentEndDate'
+		  });
+    });
+    
+    /*查询操作*/
+    function queryList(){
+    	var rentStartDate =$("#rentStartDate").val();
+    	var rentEndDate =$("#rentEndDate").val();
+    	$.post("/houseTenant/items", {"rentStartDate":rentStartDate,"rentEndDate":rentEndDate}, function (resonse) {
+    		 $("#houseTenantItem").html(resonse);
+        })
+    }
 </script>

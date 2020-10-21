@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html class="x-admin-sm">
+<html class="">
 <head>
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit">

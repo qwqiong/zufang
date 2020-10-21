@@ -28,7 +28,7 @@ public class DelegateHouseController {
      * @return
      */
     @GetMapping("/list")
-    public ModelAndView test(){
+    public ModelAndView test(DelegateHouse delegateHouse){
         return new ModelAndView("/delegateHouseList");
     }
 
@@ -69,8 +69,8 @@ public class DelegateHouseController {
      * @return
      */
     @PostMapping("/items")
-    public ModelAndView items(Model model){
-        List<DelegateHouse> items =  delegateHouseService.items();
+    public ModelAndView items(Model model,DelegateHouse delegateHouse){
+        List<DelegateHouse> items =  delegateHouseService.items(delegateHouse);
         model.addAttribute("items",items);
         return new ModelAndView("/delegateHouseItem");
     }

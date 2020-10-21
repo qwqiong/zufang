@@ -42,13 +42,13 @@
             <div class="layui-form-item">
                 <label for="rentStartDate" class="layui-form-label">起租日</label>
                 <div class="layui-input-inline">
-                    <input type="date" id="rentStartDate" name="rentStartDate" value="${delegateHouse.rentStartDate}" required="" autocomplete="off"
+                    <input type="date" id="rentStartDate" name="rentStartDate" value="${delegateHouse.rentStartDate}" lay-verify="required" lay-reqtext="起租日不能为空!" autocomplete="off"
                            class="layui-input"></div>
             </div>
             <div class="layui-form-item">
                 <label for="rentEndDate" class="layui-form-label">截止日</label>
                 <div class="layui-input-inline">
-                    <input type="date" id="rentEndDate" name="rentEndDate" value="${delegateHouse.rentEndDate}" required=""
+                    <input type="date" id="rentEndDate" name="rentEndDate" value="${delegateHouse.rentEndDate}" lay-verify="required" lay-reqtext="截止日不能为空!"
                            autocomplete="off" class="layui-input"></div>
             </div>
             <div class="layui-form-item">

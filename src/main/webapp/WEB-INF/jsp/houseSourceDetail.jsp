@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html class="x-admin-sm">
 <head>
@@ -22,6 +23,7 @@
         <form class="layui-form">
             <div class="layui-form-item" style="display:none">
                 <div class="layui-input-inline">
+                	<input type="hidden" name="fileIds" id="fileIds"  value="${fileIds}">
                     <input type="text" value="${houseSource.id}" id="id" name="id" required="" autocomplete="off" class="layui-input">
                 </div>
             </div>
@@ -66,6 +68,19 @@
                 <div class="layui-input-inline">
                     <input type="text" id="comment" value="${houseSource.comment}" name="comment" required=""
                            autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-upload">
+			  <button type="button" class="layui-btn" id="test2">多图片上传</button> 
+			  <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+			    预览图：
+			    <div class="layui-upload-list" id="imgeList">
+			      <c:forEach var="item" items="${fileList}" varStatus="xh">
+			       	  <div id="${item.id}"><img width="300" height="200" src='/houseSource/downLoadFile?id=${item.id}' class="layui-upload-img" style="margin-bottom: 2px;">
+			       	  	<a style="color:red;cursor:pointer" onclick="deleteFile('${item.id}')">删除</a>
+			       	  </div>
+              	  </c:forEach>
+			    </div>
+			  </blockquote>
             </div>
             <div class="layui-form-item">
                 <label for="addHouse" class="layui-form-label"></label>
@@ -114,7 +129,62 @@
                 return false;
             });
 
-    });</script>
+    });
+    
+	layui.use('upload', function(){
+		var $ = layui.jquery
+		,upload = layui.upload;   
+		//多图片上传
+		upload.render({
+		  elem: '#test2'
+		  ,url: '/houseSource/saveFile?id='+$("#id").val() //改成您自己的上传接口
+		  ,multiple: true
+		  /* ,before: function(obj){
+		    //预读本地文件示例，不支持ie8
+		    obj.preview(function(index, file, result){
+		      alert(result);	
+		      $('#demo2').append('<img src="'+ result +'" style="width:300px;height:200px" alt="'+ file.name +'" class="layui-upload-img">')
+		    });
+		  } */
+		  ,done: function(res){
+			//如果上传失败
+	        if(res.code > 0){
+	          return layer.msg('上传失败',{icon:5,time:1500});
+	        }else{
+	           //上传完毕
+	             var fileIds =$("#fileIds").val();
+	             if(fileIds !=null && fileIds !=""){
+	        	 	fileIds += ","+res.id;
+	             }else{
+	            	 fileIds = res.id;
+	             }
+	        	 $("#fileIds").val(fileIds);
+	        	 $('#imgeList').append(
+	 					'<div id='+res.id+'><img  width="300" height="200" src="/houseSource/downLoadFile?id='+res.id+'" class="layui-upload-img" style="margin-bottom: 2px;"><a style="color:red;cursor:pointer" onclick="deleteFile('+res.id+')">删除</a></div>')
+	 				 return layer.msg('上传成功',{icon:1,time:1500});	
+			     
+	        } 
+		  }
+		});
+	});
+	
+	function deleteFile(fileId){
+		var ids ="";
+		var fileIds =$("#fileIds").val();
+		var arr1 = fileIds.split(",");
+		for(var i =0 ;i<arr1.length;i++){
+		    if(arr1[i] == fileId){
+   			}else{
+   				ids += arr1[i]+",";
+   			}
+		}
+		if(ids !=""){
+			ids = ids.substring(0, ids.length - 1);
+		}
+		$("#fileIds").val(ids);
+		$("div#"+fileId).remove();
+	}
+    </script>
 </body>
 
 </html>

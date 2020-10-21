@@ -38,7 +38,6 @@ public class LoginController {
         if(Objects.isNull(user)){
             response.sendRedirect("/");
         }else {
-            log.info("login===============");
             request.getSession().setAttribute("userName",username);
             request.getSession().setAttribute("user",user);
             response.sendRedirect("/index/index");

@@ -29,8 +29,8 @@ public class DelegateHouseService {
      * 客源列表
      * @return
      */
-    public List<DelegateHouse> items() {
-        return delegateHouseRepository.findAll();
+    public List<DelegateHouse> items(DelegateHouse delegateHouse) {
+        return delegateHouseRepository.queryDelegateHouseList(delegateHouse.getRentStartDate(),delegateHouse.getRentEndDate());
     }
 
     /**

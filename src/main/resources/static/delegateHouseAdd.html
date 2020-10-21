@@ -24,25 +24,25 @@
             <div class="layui-form-item">
                 <label for="delegatePrice" class="layui-form-label">委托价</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="delegatePrice" name="delegatePrice" required="" autocomplete="off" class="layui-input">
+                	<input type="text" id="delegatePrice" name="delegatePrice" name="title" autocomplete="off" placeholder="请输入委托价" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="payDate" class="layui-form-label">打款日</label>
                 <div class="layui-input-inline">
-                    <input type="date" id="payDate" name="payDate" required="" autocomplete="off"
+                    <input type="date" id="payDate" name="payDate" required="true" autocomplete="off"
                            class="layui-input"></div>
             </div>
             <div class="layui-form-item">
                 <label for="rentStartDate" class="layui-form-label">起租日</label>
                 <div class="layui-input-inline">
-                    <input type="date" id="rentStartDate" name="rentStartDate" required="" autocomplete="off"
+                    <input type="date" id="rentStartDate" lay-verify="required" lay-reqtext="起租日不能为空!" name="rentStartDate" autocomplete="off"
                            class="layui-input"></div>
             </div>
             <div class="layui-form-item">
                 <label for="rentEndDate" class="layui-form-label">截止日</label>
                 <div class="layui-input-inline">
-                    <input type="date" id="rentEndDate" name="rentEndDate" required=""
+                    <input type="date" id="rentEndDate" name="rentEndDate" lay-verify="required" lay-reqtext="截止日不能为空!"
                            autocomplete="off" class="layui-input"></div>
             </div>
             <div class="layui-form-item">
@@ -67,7 +67,7 @@
         $ = layui.jquery;
         var form = layui.form,
             layer = layui.layer;
-
+        
         //监听提交
         form.on('submit(add)',
             function (data) {

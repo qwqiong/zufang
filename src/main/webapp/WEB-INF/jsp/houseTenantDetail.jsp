@@ -54,12 +54,12 @@
             <div class="layui-form-item">
                 <label for="rentStartDate" class="layui-form-label">起租日期</label>
                 <div class="layui-input-inline layui-show-xs-block">
-                    <input type="date" class="layui-input"  name="rentStartDate" id="rentStartDate" value="${houseTenant.rentStartDate}"></div>
+                    <input type="date" class="layui-input" lay-verify="required" lay-reqtext="起租日期不能为空!" name="rentStartDate" id="rentStartDate" value="${houseTenant.rentStartDate}"></div>
             </div>
             <div class="layui-form-item">
                 <label for="rentEndDate" class="layui-form-label">截止日期</label>
                 <div class="layui-input-inline layui-show-xs-block">
-                    <input type="date" class="layui-input"  name="rentEndDate" id="rentEndDate" value="${houseTenant.rentEndDate}"></div>
+                    <input type="date" class="layui-input" lay-verify="required" lay-reqtext="截止日期不能为空!" name="rentEndDate" id="rentEndDate" value="${houseTenant.rentEndDate}"></div>
             </div>
             <div class="layui-form-item">
                 <label for="payDate" class="layui-form-label">交款日期</label>

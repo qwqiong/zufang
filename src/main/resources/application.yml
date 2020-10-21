@@ -2,11 +2,12 @@ server:
   port: 8081
 spring:
   application:
-    # 应用名称，也是当前应用在注册中心的serviceId
+    # 应锟斤拷锟斤拷锟狡ｏ拷也锟角碉拷前应锟斤拷锟斤拷注锟斤拷锟斤拷锟侥碉拷serviceId
     name: nch-health-consulting
   multipart:
     maxFileSize: 100MB
     maxRequestSize: 100MB
+    filePath: d:/uploads/
   servlet:
     multipart:
       max-file-size: 100MB
@@ -15,7 +16,7 @@ spring:
     view:
       prefix: /WEB-INF/jsp
       suffix: .jsp
-  # 数据库配置
+  # 锟斤拷锟捷匡拷锟斤拷锟斤拷
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://81.70.5.172:3306/zufang?characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
@@ -27,6 +28,3 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-#文件上传路径
-fms:
-  baseDir: C:/temp/

@@ -30,8 +30,8 @@ public class HouseTenantService {
      * 客源列表
      * @return
      */
-    public List<HouseTenant> items() {
-        return houseTenantRepository.findAll();
+    public List<HouseTenant> items(HouseTenant house) {
+        return houseTenantRepository.queryHouseTenantList(house.getRentStartDate(),house.getRentEndDate());
     }
 
     /**
